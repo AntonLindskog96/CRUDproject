@@ -58,6 +58,7 @@
             button1.TabIndex = 0;
             button1.Text = "HOME";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_2;
             // 
             // button2
             // 
@@ -81,6 +82,7 @@
             button3.TabIndex = 2;
             button3.Text = "READ";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -92,6 +94,7 @@
             button4.TabIndex = 3;
             button4.Text = "UPDATE";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -156,6 +159,7 @@
             button5.TabIndex = 14;
             button5.Text = "DELETE";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // numericUpDown1
             // 
@@ -174,7 +178,6 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(640, 151);
             dataGridView1.TabIndex = 16;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // txtEmail
             // 
