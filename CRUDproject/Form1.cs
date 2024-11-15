@@ -46,23 +46,34 @@ namespace CRUDproject
             }
             if (isAnyEmpty)
             {
-                MessageBox.Show("Kontrollera fälten");
+                MessageBox.Show("Kontrollera fälten", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+
+
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-IIVQAN1;Initial Catalog=CrudApp;Integrated Security=True;");
+                con.Open();
+                string insertQuery = "INSERT INTO crudApp (email, name, username, password) VALUES (@email, @name, @username, @password)";
+                SqlCommand cmd = new SqlCommand(insertQuery, con);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@name", txtName.Text);
+                cmd.Parameters.AddWithValue("@username", txtUser.Text);
+                cmd.Parameters.AddWithValue("@password", txtPass.Text);
+                int count = cmd.ExecuteNonQuery();
+                con.Close();
+                if (count > 0)
+                {
+                    MessageBox.Show("Created successfullyyssad", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Error in creation u know", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-IIVQAN1;Initial Catalog=CrudApp;Integrated Security=True;");
-            con.Open();
-            string insertQuery = "INSERT INTO crudApp (email, name, username, password) VALUES (@email, @name, @username, @password)";
-            SqlCommand cmd = new SqlCommand(insertQuery, con);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@name", txtName.Text);
-            cmd.Parameters.AddWithValue("@username", txtUser.Text);
-            cmd.Parameters.AddWithValue("@password", txtPass.Text);
-            int count = cmd.ExecuteNonQuery();
-            con.Close();
-            if (count > 0)
-            {
-                MessageBox.Show("Created successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
