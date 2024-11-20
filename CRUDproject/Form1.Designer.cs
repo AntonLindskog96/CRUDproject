@@ -44,6 +44,8 @@
             txtUser = new TextBox();
             txtName = new TextBox();
             txtPass = new TextBox();
+            button6 = new Button();
+            weatherLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -51,11 +53,11 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.Font = new Font("Verdana", 8F);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(185, 218);
+            button1.Font = new Font("Verdana", 12F);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(185, 377);
             button1.Name = "button1";
-            button1.Size = new Size(75, 29);
+            button1.Size = new Size(75, 40);
             button1.TabIndex = 0;
             button1.Text = "HOME";
             button1.UseVisualStyleBackColor = false;
@@ -64,11 +66,11 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Font = new Font("Verdana", 8F);
+            button2.Font = new Font("Verdana", 12F);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(266, 219);
+            button2.Location = new Point(310, 377);
             button2.Name = "button2";
-            button2.Size = new Size(75, 28);
+            button2.Size = new Size(96, 40);
             button2.TabIndex = 1;
             button2.Text = "CREATE";
             button2.UseVisualStyleBackColor = false;
@@ -77,11 +79,11 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Font = new Font("Verdana", 8F);
+            button3.Font = new Font("Verdana", 12F);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(347, 219);
+            button3.Location = new Point(443, 377);
             button3.Name = "button3";
-            button3.Size = new Size(75, 29);
+            button3.Size = new Size(75, 40);
             button3.TabIndex = 2;
             button3.Text = "READ";
             button3.UseVisualStyleBackColor = false;
@@ -90,11 +92,11 @@
             // button4
             // 
             button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Font = new Font("Verdana", 8F);
+            button4.Font = new Font("Verdana", 12F);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(428, 219);
+            button4.Location = new Point(559, 377);
             button4.Name = "button4";
-            button4.Size = new Size(81, 28);
+            button4.Size = new Size(100, 40);
             button4.TabIndex = 3;
             button4.Text = "UPDATE";
             button4.UseVisualStyleBackColor = false;
@@ -156,11 +158,11 @@
             // button5
             // 
             button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.Font = new Font("Verdana", 8F);
+            button5.Font = new Font("Verdana", 12F);
             button5.ForeColor = Color.FromArgb(192, 0, 0);
-            button5.Location = new Point(636, 219);
+            button5.Location = new Point(706, 377);
             button5.Name = "button5";
-            button5.Size = new Size(86, 29);
+            button5.Size = new Size(109, 40);
             button5.TabIndex = 14;
             button5.Text = "DELETE";
             button5.UseVisualStyleBackColor = false;
@@ -178,7 +180,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(790, 125);
+            dataGridView1.Location = new Point(164, 42);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(640, 151);
@@ -213,7 +215,29 @@
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(375, 23);
             txtPass.TabIndex = 20;
-            txtPass.UseSystemPasswordChar = true;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(64, 64, 64);
+            button6.Font = new Font("Verdana", 12F);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(675, 100);
+            button6.Name = "button6";
+            button6.Size = new Size(120, 40);
+            button6.TabIndex = 0;
+            button6.Text = "Weather Info";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // weatherLabel
+            // 
+            weatherLabel.AutoSize = true;
+            weatherLabel.Font = new Font("Segoe UI", 14F);
+            weatherLabel.Location = new Point(882, 40);
+            weatherLabel.Name = "weatherLabel";
+            weatherLabel.Size = new Size(83, 25);
+            weatherLabel.TabIndex = 23;
+            weatherLabel.Text = "Weather";
+            weatherLabel.Click += weatherLabel_Click;
             // 
             // Form1
             // 
@@ -221,6 +245,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1324, 595);
+            Controls.Add(weatherLabel);
             Controls.Add(dataGridView1);
             Controls.Add(txtPass);
             Controls.Add(txtName);
@@ -239,7 +264,6 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "CRUD";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -258,11 +282,14 @@
         private Label label4;
         private Label label5;
         private Button button5;
+        private Button button6;
         private NumericUpDown numericUpDown1;
         private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
         private TextBox txtEmail;
         private TextBox txtUser;
         private TextBox txtName;
         private TextBox txtPass;
+        private Label weatherLabel;
     }
 }

@@ -4,11 +4,17 @@ namespace CRUDproject
 {
     public partial class Form1 : Form
     {
+        private WeatherService weatherService;
         public Form1()
         {
             InitializeComponent();
             dataGridView1.Visible = false;
+            weatherService = new WeatherService();
         }
+
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -174,6 +180,20 @@ namespace CRUDproject
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private async void weatherLabel_Click(object sender, EventArgs e)
+        {
+            
+            weatherLabel.Text = "Loading...";
+
+            
+            string city = "Gothenburg"; 
+            string weather = await weatherService.GetWeatherAsync(city);
+
+            // Update the label text with the weather information
+            weatherLabel.Text = weather;
         }
     }
 }
