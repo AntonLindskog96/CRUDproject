@@ -65,7 +65,7 @@ namespace CRUDproject
                 con.Close();
                 if (count > 0)
                 {
-                    MessageBox.Show("Created successfullyyssad", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Created successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
@@ -155,10 +155,25 @@ namespace CRUDproject
             SqlCommand cmd = new SqlCommand(deleteQuery, con);
             cmd.Parameters.AddWithValue("@id", numericUpDown1.Value);
             int count = cmd.ExecuteNonQuery();
-            if(count > 0)
+            if (count > 0)
             {
                 MessageBox.Show("Deleted success", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
